@@ -1,45 +1,41 @@
-# S09_T05_DAM — NovaTech Store
+# NovaTech — Smart Gear & Audio Store
 
-Proyecto desarrollado para la sesión **S09 | M09: Manejo de Estados y Lógica de Componentes: De una interfaz estática a una interfaz interactiva** en **React Native + Expo**.
+Aplicación móvil desarrollada con **React Native** y **Expo** para la gestión reactiva de catálogos de tecnología, filtrado dinámico, favoritos y carrito de compras en tiempo real.
 
-## Equipo
-- **Grupo:** Team 05
-- **Materia:** Desarrollo de Aplicaciones Móviles (DAM)
-- **App:** NovaTech — Smart Gear & Audio Store
+## Tecnologías Utilizadas
+- **React Native** (0.86.3)
+- **Expo** (SDK 57)
+- **@expo/vector-icons** (Ionicons)
+- **React Hooks** (`useState`, `useMemo`)
 
-## Características Principales
-- **Diseño Moderno & Sin Emojis:** Interfaz temática oscura de alta fidelidad utilizando únicamente iconografía vectorial oficial (`@expo/vector-icons / Ionicons`).
-- **Manejo Integral de Estado (`useState`):**
-  - Búsqueda en vivo (`searchQuery`).
-  - Categorías dinámicas (`selectedCategory`).
-  - Sistema de favoritos reactivo con persistencia temporal (`favorites`).
-  - Filtro exclusivo de favoritos (`showOnlyFavorites`).
-  - Carrito de compras interactivo con actualización de cantidades por artículo (`cart`).
-  - Descuentos con cupones interactivos (`couponApplied`, código `TEAM05`).
-  - Pantallas modales dinámicas (`CartModal`, `SuccessModal`).
-- **Lógica Condicional:** Uso de operadores ternarios `? :` y cortocircuito lógico `&&` para alternar estados visuales, badges, listas vacías y confirmaciones de pago.
-
-## Capturas de Pantalla
-
-| Catálogo Inicial | Búsqueda Reactiva |
-| :---: | :---: |
-| ![Catálogo Inicial](./docs/screenshots/01_catalogo_inicial.png) | ![Búsqueda Reactiva](./docs/screenshots/02_busqueda_reactiva.png) |
-
-| Favoritos y Badges | Scroll y Acciones |
-| :---: | :---: |
-| ![Favoritos](./docs/screenshots/03_favoritos_actualizados.png) | ![Scroll](./docs/screenshots/04_catalogo_scroll.png) |
-
-## Ejecución del Proyecto
+## Instalación y Ejecución
 
 ```bash
-# Instalar dependencias (si es primera vez)
+# 1. Instalar dependencias
 npm install
 
-# Iniciar servidor web
+# 2. Ejecutar en navegador web
 npm run web
 
-# Iniciar en Expo Go (Android/iOS)
+# 3. Ejecutar en dispositivo móvil (Expo Go)
 npm start
 ```
 
-Para consultar el informe completo con las respuestas detalladas a las preguntas de la guía docente, consultar [DOCUMENTO_ENTREGA_S09_T05_DAM.md](./DOCUMENTO_ENTREGA_S09_T05_DAM.md).
+## Estructura del Proyecto
+
+```text
+S09_T05_DAM/
+├── App.js                      # Componente principal y gestión global de estados
+├── app.json                    # Configuración de Expo
+├── package.json
+└── src/
+    ├── components/
+    │   ├── Header.js           # Cabecera con insignias y contadores reactivos
+    │   ├── SearchBar.js        # Buscador interactivo (TextInput)
+    │   ├── CategoryFilter.js   # Filtro horizontal por categorías (Pressable)
+    │   ├── ProductCard.js      # Tarjeta de producto con acciones y steppers
+    │   ├── CartModal.js        # Modal interactivo de carrito y cupones
+    │   └── SuccessModal.js     # Modal de confirmación de compra
+    └── data/
+        └── products.js         # Datos del catálogo de productos
+```
